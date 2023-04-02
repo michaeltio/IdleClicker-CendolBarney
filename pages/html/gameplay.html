@@ -19,14 +19,36 @@
 <body>
     <div class="container-fluid">
         <div id="gamePlay">
-            <div id="monster">
-                <img onclick="Hit()" class="img-fluid" src="../../sources/gif/monster-idle.gif" alt="">
+            <div id="profile">
+                <h1 id="money" class="text-center text-light"></h1>
             </div>
-
+            <div id="monster">
+                <img ontouchstart="Hit()" class="img-fluid" src="../../sources/gif/monster-idle.gif" alt="">
+            </div>
         </div>
         <div id="shopCanvas">
-            <div class="shopBox">
-                ada
+            <div class="shopBox bg-primary rounded-3">
+                <div class="content-container-box">
+                    <img id="attack" class="img-fluid custom-image-size" src="../../sources/images/attack.png" alt="">
+                    <h6 class="text-light">attack</h6>
+                    <h6 class="text-light">Level: 0</h6>
+                    <button>2000</button>
+                </div>
+            </div>
+            <div class="shopBox bg-primary rounded-3">
+                <div>
+
+                </div>
+            </div>
+            <div class="shopBox bg-primary rounded-3">
+                <div>
+
+                </div>
+            </div>
+            <div class="shopBox bg-primary rounded-3">
+                <div>
+
+                </div>
             </div>
         </div>
     </div>
