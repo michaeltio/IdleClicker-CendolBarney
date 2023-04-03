@@ -47,7 +47,7 @@ setInterval(updateInterval, 5100);
 
 function Hit() {
     //buat ganti animasi monster kalo ke click / touch berarti ke hit
-    $("#monster img").attr("src", "../../sources/gif/monster-hit.gif");
+    $("#monster img").attr("src", "../../sources/gif/monster-hitv2.gif");
 
     //generate number if number from 1 - attack speed level than crit damage proc
     criticalChance = Math.floor(Math.random() * 101);
@@ -63,7 +63,7 @@ function Hit() {
 
     //balikin monster ke animasi awal
     setTimeout(function () {
-        $("#monster img").attr("src", "../../sources/gif/monster-idle.gif");
+        $("#monster img").attr("src", "../../sources/gif/monster-idlev2.gif");
     }, 150);
 
     //update uang
