@@ -20,34 +20,75 @@
     <div class="container-fluid">
         <div id="gamePlay">
             <div id="profile">
-                <h1 id="money" class="text-center text-light"></h1>
+                <h1 id="money" class="text-center text-light">0</h1>
             </div>
             <div id="monster">
-                <img ontouchstart="Hit()" class="img-fluid" src="../../sources/gif/monster-idle.gif" alt="">
+                <img onclick="Hit()" class="img-fluid" src="../../sources/gif/monster-idle.gif" alt="">
             </div>
         </div>
         <div id="shopCanvas">
-            <div class="shopBox bg-primary rounded-3">
-                <div class="content-container-box">
-                    <img id="attack" class="img-fluid custom-image-size" src="../../sources/images/attack.png" alt="">
-                    <h6 class="text-light">attack</h6>
-                    <h6 class="text-light">Level: 0</h6>
-                    <button>2000</button>
+            <div id="attack" class="mt-3">
+                <div class="shopBox bg-secondary rounded-3">
+                    <div class="content-container-box">
+                        <img class="img-fluid custom-image-size" src="../../sources/images/attack.png" alt="">
+                    </div>
+                    <div class="content-container-box">
+                        <h6 class="text-light">attack</h6>
+                    </div>
+                    <div class="content-container-box">
+                        <h6 id="AttackText" class="text-light">Level: 0</h6>
+                    </div>
+                    <div class="content-container-box">
+                        <button id="AttackButton" onclick="UpgradeAttack()">10</button>
+                    </div>
                 </div>
             </div>
-            <div class="shopBox bg-primary rounded-3">
-                <div>
-
+            <div id="attack-speed" class="mt-3">
+                <div class="shopBox bg-secondary rounded-3">
+                    <div class="content-container-box">
+                        <img class="img-fluid custom-image-size" src="../../sources/images/attack-speed.png" alt="">
+                    </div>
+                    <div class="content-container-box">
+                        <h6 class="text-light">attack speed</h6>
+                    </div>
+                    <div class="content-container-box">
+                        <h6 id="ASText" class="text-light">Level: 0</h6>
+                    </div>
+                    <div class="content-container-box">
+                        <button id="ASButton" onclick="UpgradeAS()">10</button>
+                    </div>
                 </div>
             </div>
-            <div class="shopBox bg-primary rounded-3">
-                <div>
-
+            <div id="critical-damage" class="mt-3">
+                <div class="shopBox bg-secondary rounded-3">
+                    <div class="content-container-box">
+                        <img class="img-fluid custom-image-size" src="../../sources/images/critical-damage.png" alt="">
+                    </div>
+                    <div class="content-container-box">
+                        <h6 class="text-light">critical damage</h6>
+                    </div>
+                    <div class="content-container-box">
+                        <h6 id="CDText" class="text-light">Level: 0</h6>
+                    </div>
+                    <div class="content-container-box">
+                        <button id="CDButton" onclick="UpgradeCD()">10</button>
+                    </div>
                 </div>
             </div>
-            <div class="shopBox bg-primary rounded-3">
-                <div>
-
+            <div id="critical-chance" class="mt-3">
+                <div class="shopBox bg-secondary rounded-3">
+                    <div class="content-container-box">
+                        <img class="img-fluid custom-image-size" src="../../sources/images/critical-chance.png" alt="">
+                    </div>
+                    <div class="content-container-box">
+                        <h6 class="text-light">critical chance</h6>
+                    </div>
+                    <div class="content-container-box">
+                        <h6 id="CCText" class="text-light">Level: 0</h6>
+                    </div>
+                    <div class="content-container-box">
+                        <button id="CCButton" onclick="UpgradeCC()">10</button>
+                    </div>
                 </div>
             </div>
         </div>
