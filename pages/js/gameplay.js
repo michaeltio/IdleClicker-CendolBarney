@@ -39,11 +39,25 @@ function updateInterval() {
     clearInterval(intervalID);
 
     // set a new interval with the updated interval time
-    intervalID = setInterval(Hit, interval);
+    intervalID = setInterval(function () {
+        console.log("Hello From Clone");
+        if (attackSpeedLevel != 0) {
+            Hit();
+        }
+    }, interval);
 }
-let intervalID = setInterval(Hit, interval);
+
+//auto clicker
+let intervalID = setInterval(function () {
+    console.log("Hello From Original");
+    if (attackSpeedLevel != 0) {
+        Hit();
+    }
+}, interval);
 setInterval(updateInterval, 5100);
 
+
+//TERAKHIR NGE LAYOUT
 
 function Hit() {
     //buat ganti animasi monster kalo ke click / touch berarti ke hit
@@ -64,7 +78,7 @@ function Hit() {
     //balikin monster ke animasi awal
     setTimeout(function () {
         $("#monster img").attr("src", "../../sources/gif/monster-idlev2.gif");
-    }, 150);
+    }, 250);
 
     //update uang
     $("#money").text(diamonds);
