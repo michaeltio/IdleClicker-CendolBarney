@@ -1,6 +1,7 @@
 //audio
 window.onload = function () {
     let music = new Audio("/sources/audio/background-music.mp3");
+    music.loop = true;
     music.play();
 
 }
@@ -31,7 +32,7 @@ let CCPrice = 10;
 
 
 //Max Level for attack,attack speed, critical damage
-const MAX_LEVEL = 200;
+const MAX_LEVEL = 2;
 
 //max level for critical chance
 const MAX_CC = 100;
@@ -116,14 +117,24 @@ function Hit() {
 function UpgradeAttack() {
     //check if max level
     if (attackLevel >= MAX_LEVEL) {
+        $("#sign h6").text("Level Max");
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
         return;
     }
 
     //check apakah user punya duit atau tidak
     if (diamonds < attackPrice) {
-        console.log("No Money");
-        return
+        console.log()
+        $("#sign h6").text("You Poor, No Diamonds");
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
+        return;
     }
+
+    //benerin bug button
 
     //ngurangin duit user
     diamonds = diamonds - attackPrice;
@@ -131,17 +142,23 @@ function UpgradeAttack() {
     upgradeSkill.cloneNode(true).play();
     //naikin level waktu upgrade
     attackLevel++;
+    $("#sign h6").text(`Attack Level Up: ${attackLevel}`);
+    setTimeout(function () {
+        $("#sign h6").text("");
+    }, 2000);
 
     //buat level text agar update sesuai dengan level
     $("#AttackText").text(`Level: ${attackLevel}`);
 
-    //kalo level max update isi button
-    if (attackLevel >= MAX_LEVEL) {
-        $("#AttackButton").text("MAX LEVEL");
-    }
     //update price
     attackPrice = Math.round(attackPrice * 1.5);
     $("#AttackButton").text(attackPrice);
+
+    //kalo level max update isi button
+    if (attackLevel >= MAX_LEVEL) {
+        console.log("Max level");
+        $("#AttackButton").text("MAX LEVEL");
+    }
 }
 
 function UpgradeAS() {
