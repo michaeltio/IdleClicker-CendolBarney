@@ -1,7 +1,6 @@
 body {
-    /*background-image: url("../../sources/images/background-gameplay.png");
-    background-repeat: no-repeat;*/
-
+    background-image: url("../../sources/images/background-gameplay.png");
+    overflow: hidden;
 }
 
 #layout {
@@ -21,12 +20,29 @@ body {
     background-color: grey;
 }
 
+#profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+#profile img {
+    width: 30px;
+    margin-right: 1rem;
+}
+
+#profile h6 {
+    text-align: center;
+}
+
 #monster {
+    margin-top: 11rem;
     bottom: 0;
 }
 
 #monster img {
-    width: 50%;
+    width: 70%;
 }
 
 #border-between-canvas {
@@ -36,6 +52,8 @@ body {
 
 #shopCanvas {
     width: 100%;
+    margin: 0;
+    height: 20rem;
     overflow: auto;
 }
 
@@ -76,5 +94,5 @@ body {
 }
 
 .custom-button-font {
-    font-size: 1em;
+    font-size: 1em
 }

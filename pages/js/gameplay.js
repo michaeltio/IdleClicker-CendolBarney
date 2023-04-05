@@ -1,3 +1,16 @@
+//audio
+window.onload = function () {
+    let music = new Audio("/sources/audio/background-music.mp3");
+    music.play();
+
+}
+let punch1 = new Audio("/sources/audio/punch1.mp3");
+let punch2 = new Audio("/sources/audio/punch2.mp3");
+let punch3 = new Audio("/sources/audio/punch3.mp3");
+
+let upgradeSkill = new Audio("/sources/audio/beli-skill.mp3");
+
+
 //player info
 let diamonds = 0;
 
@@ -60,6 +73,22 @@ setInterval(updateInterval, 5100);
 //TERAKHIR NGE LAYOUT
 
 function Hit() {
+    //tambahin suara nonjok
+    const randomNum = Math.floor(Math.random() * 3) + 1;
+    console.log("random: " + randomNum);
+    switch (randomNum) {
+        case 1:
+            punch1.cloneNode(true).play();
+            break;
+        case 2:
+            punch2.cloneNode(true).play();
+            break;
+        case 3:
+            punch3.cloneNode(true).play();
+            break;
+
+    }
+
     //buat ganti animasi monster kalo ke click / touch berarti ke hit
     $("#monster img").attr("src", "../../sources/gif/monster-hitv2.gif");
 
@@ -99,7 +128,7 @@ function UpgradeAttack() {
     //ngurangin duit user
     diamonds = diamonds - attackPrice;
     $("#money").text(diamonds);
-
+    upgradeSkill.cloneNode(true).play();
     //naikin level waktu upgrade
     attackLevel++;
 
@@ -130,7 +159,7 @@ function UpgradeAS() {
     //ngurangin duit user
     diamonds = diamonds - ASPrice;
     $("#money").text(diamonds);
-
+    upgradeSkill.cloneNode(true).play();
     //naikin level waktu upgrade
     attackSpeedLevel++;
     //buat level text agar update sesuai dengan level
@@ -159,7 +188,7 @@ function UpgradeCD() {
     //ngurangin duit user
     diamonds = diamonds - CDPrice;
     $("#money").text(diamonds);
-
+    upgradeSkill.cloneNode(true).play();
     //naikin level waktu upgrade
     criticalDamageLevel++;
     //buat level text agar update sesuai dengan level
@@ -188,6 +217,7 @@ function UpgradeCC() {
     //ngurangin duit user
     diamonds = diamonds - CCPrice;
     $("#money").text(diamonds);
+    upgradeSkill.cloneNode(true).play();
     //naikin level waktu upgrade
     criticalChanceLevel++;
     //buat level text agar update sesuai dengan level
