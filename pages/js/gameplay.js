@@ -209,16 +209,16 @@ function UpgradeCD() {
         return;
     }
     //check apakah user punya duit atau tidak
-    if (diamonds < CDPrice) {
-        $("#sign h6").text("You're Poor, No Diamonds");
-        setTimeout(function () {
-            $("#sign h6").text("");
-        }, 2000);
-        return;
-    }
+    // if (diamonds < CDPrice) {
+    //     $("#sign h6").text("You're Poor, No Diamonds");
+    //     setTimeout(function () {
+    //         $("#sign h6").text("");
+    //     }, 2000);
+    //     return;
+    // }
 
     //ngurangin duit user
-    diamonds = diamonds - CDPrice;
+    //diamonds = diamonds - CDPrice;
     $("#money").text(diamonds);
     upgradeSkill.cloneNode(true).play();
 
@@ -288,25 +288,25 @@ function MainMenu() {
 
 const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
-function MainMenu(){
-    if(isLandscape){
-         //vw dan vh untuk desktop
-         $("#popupExit").css("height", "20vw");
-         $("#popupExit").css("width", "20vw");
-     }
-    
-    else{
+function MainMenu() {
+    if (isLandscape) {
+        //vw dan vh untuk desktop
+        $("#popupExit").css("height", "20vh");
+        $("#popupExit").css("width", "20vw");
+    }
+
+    else {
         //vw dan vh untuk mobile
-        $("#popupExit").css("height", "50vw");
-        $("#popupExit").css("width", "50vw");
-        }
+        $("#popupExit").css("height", "20vh");
+        $("#popupExit").css("width", "95vw");
+    }
 }
 
-function closeExit(){
+function closeExit() {
     $("#popupExit").css("height", "0vw");
     $("#popupExit").css("width", "0vw");
 }
 
-function btnExit(){
+function btnExit() {
     window.location.href = "main-menu.html";
 }

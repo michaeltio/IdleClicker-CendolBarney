@@ -43,7 +43,7 @@ body {
 }
 
 #monster {
-    margin-top: 11rem;
+    margin-top: 10rem;
     bottom: 0;
 }
 
@@ -59,7 +59,7 @@ body {
 #shopCanvas {
     width: 100%;
     margin: 0;
-    height: 20rem;
+    height: 21rem;
     overflow: auto;
 }
 
@@ -69,6 +69,11 @@ body {
     grid-template-rows: auto auto;
     justify-content: space-between;
     align-items: center;
+}
+
+#exit-button {
+    display: flex;
+    justify-content: space-around;
 }
 
 .custom-image-size {
@@ -106,16 +111,20 @@ body {
 @media (min-width: 768px) {
     body {
         background-image: url("../../sources/images/background-desktop.png");
-
     }
-
 
     #monster img {
         width: 40%;
     }
 }
 
-#popupExit{
+#menuButton {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+#popupExit {
     position: absolute;
     width: 0vw;
     height: 0vw;
@@ -123,5 +132,5 @@ body {
     overflow: hidden;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }

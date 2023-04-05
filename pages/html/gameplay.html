@@ -22,7 +22,7 @@
         <div id="layout">
             <div id="gamePlay">
                 <div>
-                    <button onclick="MainMenu()">Menu</button>
+                    <button id="menuButton" onclick="MainMenu()">Menu</button>
                 </div>
 
                 <div id="profile">
@@ -37,12 +37,14 @@
                     <img onclick="Hit()" class="img-fluid" src="../../sources/gif/monster-idlev2.gif" alt="">
                 </div>
             </div>
-            <div id="popupExit" class="window">
+            <div id="popupExit" class="window rounded-3">
                 <div id="popupExitContent" class="windowContent">
-                    <p>Progress will be lost. Are you sure?</p>
+                    <p class="text-center m-3">Progress will be lost. Are you sure?</p>
                 </div>
-                <button onclick="closeExit()" class="windowBtn">Cancel</button>
-                <button onclick="btnExit()" class="windowBtn">Proceed</button>
+                <div id="exit-button">
+                    <button onclick="closeExit()" class="windowBtn">Cancel</button>
+                    <button onclick="btnExit()" class="windowBtn">Proceed</button>
+                </div>
             </div>
             <div id="border-between-canvas" class="bg-dark"></div>
             <div id="shopCanvas" class="row bg-dark">

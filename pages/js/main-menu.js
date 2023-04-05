@@ -31,5 +31,11 @@ function CloseCredits() {
 }
 
 function startBtn() {
+    if ($("#start-button").val() === "") {
+        console.log("Failed");
+        return;
+    }
+
+    console.log("Succed");
     window.location.href = "gameplay.html"
 }
