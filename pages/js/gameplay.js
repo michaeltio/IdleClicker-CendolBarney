@@ -285,3 +285,28 @@ function UpgradeCC() {
 function MainMenu() {
     window.location.href = "main-menu.html"
 }
+
+const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+
+function MainMenu(){
+    if(isLandscape){
+         //vw dan vh untuk desktop
+         $("#popupExit").css("height", "20vw");
+         $("#popupExit").css("width", "20vw");
+     }
+    
+    else{
+        //vw dan vh untuk mobile
+        $("#popupExit").css("height", "50vw");
+        $("#popupExit").css("width", "50vw");
+        }
+}
+
+function closeExit(){
+    $("#popupExit").css("height", "0vw");
+    $("#popupExit").css("width", "0vw");
+}
+
+function btnExit(){
+    window.location.href = "main-menu.html";
+}
