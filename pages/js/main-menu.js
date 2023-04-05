@@ -31,7 +31,7 @@ function CloseCredits() {
 }
 
 function startBtn() {
-    if ($("#start-button").val() === "") {
+    if ($("#inputName").val().trim() == "") {
         console.log("Failed");
         return;
     }
