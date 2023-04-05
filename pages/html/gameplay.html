@@ -21,6 +21,9 @@
     <div class="container-fluid">
         <div id="layout">
             <div id="gamePlay">
+                <div>
+                    <button onclick="MainMenu()">Menu</button>
+                </div>
 
                 <div id="profile">
                     <img src="../../sources/images/diamondsv2.png" alt="">
@@ -30,74 +33,77 @@
                 <div id="sign">
                     <h6 class="text-white text-center"></h6>
                 </div>
-
                 <div id="monster" class="text-center">
                     <img onclick="Hit()" class="img-fluid" src="../../sources/gif/monster-idlev2.gif" alt="">
                 </div>
             </div>
             <div id="border-between-canvas" class="bg-dark"></div>
             <div id="shopCanvas" class="row bg-dark">
-                <div id="attack" class="col-12 col-md-3 p-2">
+                <div id="attack" class="col-12 col-sm-6 col-md-3 p-2">
                     <div class="shopBox bg-secondary rounded-3">
                         <div class="content-container-box">
                             <img class="img-fluid custom-image-size" src="../../sources/images/Attackv2.png" alt="">
                         </div>
                         <div class="content-container-box">
-                            <h6 class="text-light custom-button-font">attack</h6>
+                            <h6 class="text-light custom-button-font text-center mt-1">attack</h6>
                         </div>
                         <div class="content-container-box">
-                            <h6 id="AttackText" class="text-light custom-button-font">Level: 0</h6>
+                            <h6 id="AttackText" class="text-light custom-button-font text-center mt-1">Level: 0</h6>
                         </div>
                         <div class="content-container-box">
-                            <button id="AttackButton" class="custom-button-size" onclick="UpgradeAttack()">10</button>
+                            <button id="AttackButton" class="btn btn-warning custom-button-size m-3"
+                                onclick="UpgradeAttack()">10</button>
                         </div>
                     </div>
                 </div>
-                <div id="attack-speed" class="col-12 col-md-3 p-2">
+                <div id="attack-speed" class="col-12 col-sm-6 col-md-3 p-2">
                     <div class="shopBox bg-secondary rounded-3">
                         <div class="content-container-box">
                             <img class="img-fluid custom-image-size" src="../../sources/images/ASv2.png" alt="">
                         </div>
                         <div class="content-container-box">
-                            <h6 class="text-light custom-button-font">attack speed</h6>
+                            <h6 class="text-light custom-button-font text-center mt-1">attack speed</h6>
                         </div>
                         <div class="content-container-box">
-                            <h6 id="ASText" class="text-light custom-button-font">Level: 0</h6>
+                            <h6 id="ASText" class="text-light custom-button-font text-center mt-1">Level: 0</h6>
                         </div>
                         <div class="content-container-box">
-                            <button id="ASButton" class="custom-button-size" onclick="UpgradeAS()">10</button>
+                            <button id="ASButton" class="btn btn-warning custom-button-size m-3"
+                                onclick="UpgradeAS()">10</button>
                         </div>
                     </div>
                 </div>
-                <div id="critical-damage" class="col-12 col-md-3 p-2">
+                <div id="critical-damage" class="col-12 col-sm-6 col-md-3 p-2">
                     <div class="shopBox bg-secondary rounded-3">
                         <div class="content-container-box">
                             <img class="img-fluid custom-image-size" src="../../sources/images/CDv2.png" alt="">
                         </div>
                         <div class="content-container-box">
-                            <h6 class="text-light custom-button-font">critical damage</h6>
+                            <h6 class="text-light custom-button-font text-center mt-1">critical damage</h6>
                         </div>
                         <div class="content-container-box">
-                            <h6 id="CDText" class="text-light custom-button-font">Level: 0</h6>
+                            <h6 id="CDText" class="text-light custom-button-font text-center mt-1">Level: 0</h6>
                         </div>
                         <div class="content-container-box">
-                            <button id="CDButton" class="custom-button-size" onclick="UpgradeCD()">10</button>
+                            <button id="CDButton" class="btn btn-warning custom-button-size m-3"
+                                onclick="UpgradeCD()">10</button>
                         </div>
                     </div>
                 </div>
-                <div id="critical-chance" class="col-12 col-md-3 p-2">
+                <div id="critical-chance" class="col-12 col-sm-6 col-md-3 p-2">
                     <div class="shopBox bg-secondary rounded-3">
                         <div class="content-container-box">
                             <img class="img-fluid custom-image-size" src="../../sources/images/CCv2.png" alt="">
                         </div>
                         <div class="content-container-box">
-                            <h6 class="text-light custom-button-font">critical chance</h6>
+                            <h6 class="text-light custom-button-font text-center mt-1">critical chance</h6>
                         </div>
                         <div class="content-container-box">
-                            <h6 id="CCText" class="text-light custom-button-font">Level: 0</h6>
+                            <h6 id="CCText" class="text-light custom-button-font text-center mt-1">Level: 0</h6>
                         </div>
                         <div class="content-container-box">
-                            <button id="CCButton" class="custom-button-size" onclick="UpgradeCC()">10</button>
+                            <button id="CCButton" class="btn btn-warning custom-button-size m-3"
+                                onclick="UpgradeCC()">10</button>
                         </div>
                     </div>
                 </div>

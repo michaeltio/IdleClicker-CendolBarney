@@ -32,7 +32,7 @@ let CCPrice = 10;
 
 
 //Max Level for attack,attack speed, critical damage
-const MAX_LEVEL = 2;
+const MAX_LEVEL = 200;
 
 //max level for critical chance
 const MAX_CC = 100;
@@ -69,9 +69,6 @@ let intervalID = setInterval(function () {
     }
 }, interval);
 setInterval(updateInterval, 5100);
-
-
-//TERAKHIR NGE LAYOUT
 
 function Hit() {
     //tambahin suara nonjok
@@ -126,20 +123,19 @@ function UpgradeAttack() {
 
     //check apakah user punya duit atau tidak
     if (diamonds < attackPrice) {
-        console.log()
-        $("#sign h6").text("You Poor, No Diamonds");
+        $("#sign h6").text("You're Poor, No Diamonds");
         setTimeout(function () {
             $("#sign h6").text("");
         }, 2000);
         return;
     }
 
-    //benerin bug button, kalo udah diapus aja
-
     //ngurangin duit user
     diamonds = diamonds - attackPrice;
     $("#money").text(diamonds);
+
     upgradeSkill.cloneNode(true).play();
+
     //naikin level waktu upgrade
     attackLevel++;
     $("#sign h6").text(`Attack Level Up: ${attackLevel}`);
@@ -164,13 +160,20 @@ function UpgradeAttack() {
 function UpgradeAS() {
     //check if max level
     if (attackSpeedLevel >= MAX_LEVEL) {
+        $("#sign h6").text("Level Max");
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
         return;
     }
 
     //check apakah user punya duit atau tidak
     if (diamonds < ASPrice) {
-        console.log("No Money");
-        return
+        $("#sign h6").text("You're Poor, No Diamonds");
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
+        return;
     }
 
     //ngurangin duit user
@@ -179,56 +182,81 @@ function UpgradeAS() {
     upgradeSkill.cloneNode(true).play();
     //naikin level waktu upgrade
     attackSpeedLevel++;
+    $("#sign h6").text(`Attack Speed Level Up: ${attackSpeedLevel}`);
+    setTimeout(function () {
+        $("#sign h6").text("");
+    }, 2000);
+
     //buat level text agar update sesuai dengan level
     $("#ASText").text(`Level: ${attackSpeedLevel}`);
-    //kalo level max update isi button
-    if (attackSpeedLevel >= MAX_LEVEL) {
-        $("#ASButton").text("MAX LEVEL");
-    }
 
     //update price
     ASPrice = Math.round(ASPrice * 1.3);
     $("#ASButton").text(ASPrice);
+    //kalo level max update isi button
+    if (attackSpeedLevel >= MAX_LEVEL) {
+        $("#ASButton").text("MAX LEVEL");
+    }
 }
 
 function UpgradeCD() {
     //check if max level
     if (criticalDamageLevel >= MAX_LEVEL) {
+        $("#sign h6").text("Level Max");
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
         return;
     }
     //check apakah user punya duit atau tidak
     if (diamonds < CDPrice) {
-        console.log("No Money");
-        return
+        $("#sign h6").text("You're Poor, No Diamonds");
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
+        return;
     }
 
     //ngurangin duit user
     diamonds = diamonds - CDPrice;
     $("#money").text(diamonds);
     upgradeSkill.cloneNode(true).play();
+
     //naikin level waktu upgrade
     criticalDamageLevel++;
+    $("#sign h6").text(`Critical Damage Level Up: ${criticalDamageLevel}`);
+    setTimeout(function () {
+        $("#sign h6").text("");
+    }, 2000);
+
     //buat level text agar update sesuai dengan level
     $("#CDText").text(`Level: ${criticalDamageLevel}`);
-    //kalo level max update isi button
-    if (criticalDamageLevel >= MAX_LEVEL) {
-        $("#CDButton").text("MAX LEVEL");
-    }
 
     //update price
     CDPrice = Math.round(CDPrice * 2);
     $("#CDButton").text(CDPrice);
+    //kalo level max update isi button
+    if (criticalDamageLevel >= MAX_LEVEL) {
+        $("#CDButton").text("MAX LEVEL");
+    }
 }
 
 function UpgradeCC() {
     //check if max level
     if (criticalChanceLevel >= MAX_CC) {
+        $("#sign h6").text("Level Max");
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
         return;
     }
     //check apakah user punya duit atau tidak
     if (diamonds < CCPrice) {
-        console.log("No Money");
-        return
+        $("#sign h6").text("You're Poor, No Diamonds");
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
+        return;
     }
 
     //ngurangin duit user
@@ -237,14 +265,23 @@ function UpgradeCC() {
     upgradeSkill.cloneNode(true).play();
     //naikin level waktu upgrade
     criticalChanceLevel++;
+    $("#sign h6").text(`Critical Chance Level Up: ${criticalChanceLevel}`);
+    setTimeout(function () {
+        $("#sign h6").text("");
+    }, 2000);
     //buat level text agar update sesuai dengan level
     $("#CCText").text(`Level: ${criticalChanceLevel}`);
-    //kalo level max update isi button
-    if (criticalChanceLevel >= MAX_LEVEL) {
-        $("#CCButton").text("MAX LEVEL");
-    }
 
     //update price
     CCPrice = Math.round(CCPrice * 1.3);
     $("#CCButton").text(CCPrice);
+
+    //kalo level max update isi button
+    if (criticalChanceLevel >= MAX_LEVEL) {
+        $("#CCButton").text("MAX LEVEL");
+    }
+}
+
+function MainMenu() {
+    window.location.href = "main-menu.html"
 }
