@@ -30,11 +30,30 @@
                 <button onclick="OpenLoadGame()" class="custom-button main-menu-font-color">LOAD</button>
             </div>
             <div class="d-flex justify-content-center mt-3">
-                <button onclick="OpenCredit()" class="custom-button main-menu-font-color">CREDIT</button>
+                <button onclick="OpenCredits()" class="custom-button main-menu-font-color">CREDITS</button>
             </div>
         </div>
 
+        <div id="popupStart" class="popup">
+            <button class="position-absolute end-0 m-3" onclick="CloseNewGame()">&#xd7;</button>
+            <div class="popupContent">
+                <label class="d-flex justify-content-center m-3" for="name">Name:</label>
+                <input id="inputName" class="d-flex justify-content-center" name="name" type="text">
+                <button class="m-3" onclick="startBtn()">Start</button>
+            </div>
+        </div>
 
+        <div id="popupCred" class="popup">
+            <button class="position-absolute end-0 m-3" onclick="CloseCredits()">&#xd7;</button>
+            <div class="popupContent" >
+                <h2 class="m-3">Credits</h2>
+                <p>UMN Gotcha by Cendol Barney</p>
+                    <p>Jonathan Adi Purwoko / 00000071230</p>
+                    <p>Russel Shivah Budiarto / 00000070376</p>
+                    <p>Felix Mario Walewangko / 00000070498</p>
+                    <p>Michael Tio / 00000070515</p>
+            </div>
+        </div>
     </div>
 </body>
 

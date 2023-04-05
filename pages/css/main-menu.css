@@ -37,3 +37,22 @@ body {
 .custom-start-button-font {
     font-size: 1.5rem;
 }
+
+.popup{
+    overflow: auto;
+    background-color: gainsboro;
+    box-sizing: border-box;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 300ms;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#inputName{
+    margin: auto;
+}
