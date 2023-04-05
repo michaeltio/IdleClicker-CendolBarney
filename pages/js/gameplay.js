@@ -134,7 +134,7 @@ function UpgradeAttack() {
         return;
     }
 
-    //benerin bug button
+    //benerin bug button, kalo udah diapus aja
 
     //ngurangin duit user
     diamonds = diamonds - attackPrice;
