@@ -2,11 +2,6 @@ body {
     background-image: url("../../sources/images/mainmenu-mobile.png");
 }
 
-@media (min-width: 768px) {
-    body {
-        background-image: url("../../sources/images/mainmenu-desktop.png");
-    }
-}
 
 .foto-square {
     width: 50%;
@@ -27,9 +22,8 @@ body {
 }
 
 .custom-button {
-    color: #444444;
-    background: none;
-    border: none;
+    color: #000000;
+    background-color: #01830b;
 }
 
 .custom-button:hover {
@@ -61,4 +55,19 @@ body {
 
 #inputName {
     margin: auto;
+}
+
+@media (min-width: 768px) {
+    body {
+        background-image: url("../../sources/images/mainmenu-desktop.png");
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .custom-button-margin {
+        margin-top: 19%;
+    }
 }

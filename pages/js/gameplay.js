@@ -3,7 +3,6 @@ window.onload = function () {
     let music = new Audio("/sources/audio/background-music.mp3");
     music.loop = true;
     music.play();
-
 }
 
 $(document).ready(function () {
@@ -164,7 +163,7 @@ function UpgradeAttack() {
     $("#AttackText").text(`Level: ${attackLevel}`);
 
     //update price
-    attackPrice = Math.round(attackPrice * 1.5);
+    attackPrice = Math.round(attackPrice + 30);
     $("#AttackButton").text(attackPrice);
 
     //kalo level max update isi button
@@ -209,7 +208,7 @@ function UpgradeAS() {
     $("#ASText").text(`Level: ${attackSpeedLevel}`);
 
     //update price
-    ASPrice = Math.round(ASPrice * 1.3);
+    ASPrice = Math.round(ASPrice + 50);
     $("#ASButton").text(ASPrice);
     //kalo level max update isi button
     if (attackSpeedLevel >= MAX_LEVEL) {
@@ -252,7 +251,7 @@ function UpgradeCD() {
     $("#CDText").text(`Level: ${criticalDamageLevel}`);
 
     //update price
-    CDPrice = Math.round(CDPrice * 1.7);
+    CDPrice = Math.round(CDPrice + 500);
     $("#CDButton").text(CDPrice);
     //kalo level max update isi button
     if (criticalDamageLevel >= MAX_LEVEL) {
@@ -293,7 +292,7 @@ function UpgradeCC() {
     $("#CCText").text(`Level: ${criticalChanceLevel}`);
 
     //update price
-    CCPrice = Math.round(CCPrice * 1.3);
+    CCPrice = Math.round(CCPrice + 50);
     $("#CCButton").text(CCPrice);
 
     //kalo level max update isi button

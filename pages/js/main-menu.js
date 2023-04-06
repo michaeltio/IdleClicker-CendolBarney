@@ -1,3 +1,10 @@
+//audio
+window.onload = function () {
+    let music = new Audio("/sources/audio/main-menu-music.mp3");
+    music.loop = true;
+    music.play();
+}
+
 const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
 $(document).ready(function () {

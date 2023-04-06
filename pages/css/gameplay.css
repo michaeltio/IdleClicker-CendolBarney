@@ -49,6 +49,7 @@ body {
 
 #monster img {
     width: 70%;
+    user-select: none;
 }
 
 #border-between-canvas {
