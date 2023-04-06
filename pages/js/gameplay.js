@@ -5,9 +5,24 @@ window.onload = function () {
     music.play();
 
 }
-let punch1 = new Audio("/sources/audio/punch1.mp3");
-let punch2 = new Audio("/sources/audio/punch2.mp3");
-let punch3 = new Audio("/sources/audio/punch3.mp3");
+
+$(document).ready(function () {
+    $(".gameplay-button").click(function () {
+        let clickAudio = new Audio("/sources/audio/buttonClick1.mp3");
+        clickAudio.play();
+    });
+    $(".gameplay-button").mouseover(function () {
+        let hoverAudio = new Audio("/sources/audio/hover.mp3");
+        hoverAudio.play();
+    });
+});
+
+let punch1 = new Audio("/sources/audio/punch1v2.mp3");
+let punch2 = new Audio("/sources/audio/punch2v2.mp3");
+let punch3 = new Audio("/sources/audio/punch3v2.mp3");
+let critical = new Audio("/sources/audio/critical-hit.mp3");
+
+let noMoney = new Audio("/sources/audio/nomoney.mp3")
 
 let upgradeSkill = new Audio("/sources/audio/beli-skill.mp3");
 
@@ -71,31 +86,32 @@ let intervalID = setInterval(function () {
 setInterval(updateInterval, 5100);
 
 function Hit() {
-    //tambahin suara nonjok
-    const randomNum = Math.floor(Math.random() * 3) + 1;
-    console.log("random: " + randomNum);
-    switch (randomNum) {
-        case 1:
-            punch1.cloneNode(true).play();
-            break;
-        case 2:
-            punch2.cloneNode(true).play();
-            break;
-        case 3:
-            punch3.cloneNode(true).play();
-            break;
-
-    }
-
     //buat ganti animasi monster kalo ke click / touch berarti ke hit
     $("#monster img").attr("src", "../../sources/gif/monster-hitv2.gif");
 
     //generate number if number from 1 - attack speed level than crit damage proc
     criticalChance = Math.floor(Math.random() * 101);
     if (criticalChance <= criticalChanceLevel) {
+        //suara critical
+        critical.cloneNode(true).play();
         reward = (1 + attackLevel) * (criticalDamageLevel + 1);
     }
     else {
+        //tambahin suara nonjok
+        const randomNum = Math.floor(Math.random() * 3) + 1;
+        console.log("random: " + randomNum);
+        switch (randomNum) {
+            case 1:
+                punch1.cloneNode(true).play();
+                break;
+            case 2:
+                punch2.cloneNode(true).play();
+                break;
+            case 3:
+                punch3.cloneNode(true).play();
+                break;
+
+        }
         reward = 1 + attackLevel;
     }
 
@@ -124,6 +140,7 @@ function UpgradeAttack() {
     //check apakah user punya duit atau tidak
     if (diamonds < attackPrice) {
         $("#sign h6").text("You're Poor, No Diamonds");
+        noMoney.cloneNode(true).play();
         setTimeout(function () {
             $("#sign h6").text("");
         }, 2000);
@@ -170,6 +187,7 @@ function UpgradeAS() {
     //check apakah user punya duit atau tidak
     if (diamonds < ASPrice) {
         $("#sign h6").text("You're Poor, No Diamonds");
+        noMoney.cloneNode(true).play();
         setTimeout(function () {
             $("#sign h6").text("");
         }, 2000);
@@ -209,16 +227,17 @@ function UpgradeCD() {
         return;
     }
     //check apakah user punya duit atau tidak
-    // if (diamonds < CDPrice) {
-    //     $("#sign h6").text("You're Poor, No Diamonds");
-    //     setTimeout(function () {
-    //         $("#sign h6").text("");
-    //     }, 2000);
-    //     return;
-    // }
+    if (diamonds < CDPrice) {
+        $("#sign h6").text("You're Poor, No Diamonds");
+        noMoney.cloneNode(true).play();
+        setTimeout(function () {
+            $("#sign h6").text("");
+        }, 2000);
+        return;
+    }
 
     //ngurangin duit user
-    //diamonds = diamonds - CDPrice;
+    diamonds = diamonds - CDPrice;
     $("#money").text(diamonds);
     upgradeSkill.cloneNode(true).play();
 
@@ -233,7 +252,7 @@ function UpgradeCD() {
     $("#CDText").text(`Level: ${criticalDamageLevel}`);
 
     //update price
-    CDPrice = Math.round(CDPrice * 2);
+    CDPrice = Math.round(CDPrice * 1.7);
     $("#CDButton").text(CDPrice);
     //kalo level max update isi button
     if (criticalDamageLevel >= MAX_LEVEL) {
@@ -253,6 +272,7 @@ function UpgradeCC() {
     //check apakah user punya duit atau tidak
     if (diamonds < CCPrice) {
         $("#sign h6").text("You're Poor, No Diamonds");
+        noMoney.cloneNode(true).play();
         setTimeout(function () {
             $("#sign h6").text("");
         }, 2000);

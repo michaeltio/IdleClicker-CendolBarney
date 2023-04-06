@@ -1,5 +1,16 @@
 const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
+$(document).ready(function () {
+    $("button").click(function () {
+        let clickAudio = new Audio("/sources/audio/buttonClick1.mp3");
+        clickAudio.play();
+    });
+    $("button").mouseover(function () {
+        let hoverAudio = new Audio("/sources/audio/hover.mp3");
+        hoverAudio.play();
+    });
+});
+
 function OpenNewGame() {
     if (isLandscape) {
         $("#popupStart").css("height", "18vh");
@@ -17,7 +28,7 @@ function CloseNewGame() {
 
 function OpenCredits() {
     if (isLandscape) {
-        $("#popupCred").css("height", "25vh");
+        $("#popupCred").css("height", "50vh");
         $("#popupCred").css("width", "50vw");
     } else {
         $("#popupCred").css("height", "50vh");
@@ -32,10 +43,8 @@ function CloseCredits() {
 
 function startBtn() {
     if ($("#inputName").val().trim() == "") {
-        console.log("Failed");
         return;
     }
 
-    console.log("Succed");
     window.location.href = "gameplay.html"
 }

@@ -115,7 +115,7 @@ body {
 
 @media (min-width: 768px) {
     body {
-        background-image: url("../../sources/images/background-desktop.png");
+        background-image: url("../../sources/images/background-desktopv2.png");
     }
 
     #monster img {
